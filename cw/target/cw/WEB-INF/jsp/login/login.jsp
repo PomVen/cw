@@ -1,12 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <html>
 <head>
-    <title>谜苑天涯-登录</title>
+    <title>cw-登录</title>
     <link rel="stylesheet" href="/layui/css/layui.css" />
     <link rel="stylesheet" href="/css/myty.css" />
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.pure.tooltips.js"></script>
     <script type="text/javascript" src="/layui/layui.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 <div class="layui-row">
@@ -16,7 +21,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="userName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input" />
+                        <input type="text" name="userName" lay-verify="required" placeholder="请输入" autocomplete="off" value="${loginUser.userName}" class="layui-input" />
                     </div>
                 </div>
                 <div class="layui-form-item">

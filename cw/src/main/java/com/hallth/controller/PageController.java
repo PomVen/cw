@@ -26,4 +26,8 @@ public class PageController {
     public String toSuggestOnline(HttpServletRequest request){
         return "oa/suggest/suggestOnLine";
     }
+    @RequestMapping(value="/toOaProcessQuery", method = {RequestMethod.GET, RequestMethod.POST})
+    public String toOaProcessQuery(HttpServletRequest request){
+        return "oa/baseFunction/oaProcessQuery";
+    }
 }

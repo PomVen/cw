@@ -3,7 +3,7 @@
 <head>
     <title>cw-登录</title>
     <link rel="stylesheet" href="/layui/css/layui.css" />
-    <link rel="stylesheet" href="/css/myty.css" />
+    <link rel="stylesheet" href="/css/mycss.css" />
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.pure.tooltips.js"></script>
     <script type="text/javascript" src="/layui/layui.js"></script>

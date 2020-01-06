@@ -12,34 +12,42 @@
     <title>OA系统</title>
     <link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
+    <link rel="stylesheet" href="/font/iconfont.css">
+    <link rel="stylesheet" href="/css/mycss.css">
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script src="/font/iconfont.js"></script>
 <body class="easyui-layout">
 <div class="clear"></div>
 <div region="north" style="width:100%; height: 10%">
-    欢迎你，${loginUser.userName}！<a href="/login/loginOut">退出登录</a>
+    欢迎你，${loginUser.userName}！
+    <a href="/login/loginOut" title="退出系统">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tuichudenglu"></use>
+        </svg>
+    </a>
 </div>
-<div region="south" id="footer" style="text-align: center; height: 6%">OA系统<br/>@copyright Hallth 2019</div>
+<div region="south" id="footer" style="text-align: center; height: 6%">OA系统<br/><span class="iconfont icon-uniE"></span>copyright Hallth <span class="iconfont icon-2019"></span> </div>
 </body>
-<div region="west" split="true" title="菜单栏" style="width: 200px;">
+<div region="west" split="true" title="菜单栏" style="width: 150px;">
     <div id="menu-content" class="easyui-accordion" style="position: absolute; top: 27px; left: 0px; right: 0px; bottom: 0px;">
         <c:forEach varStatus="status" items="${oaMenu}" var="itemP">
             <c:if test="${itemP.parentId == '0'}">
-                <div title="${itemP.menuName}" iconcls="icon-folder-page" style="overflow: auto; padding: 0px;">
-                    <ul>
-                        <c:forEach varStatus="status" items="${oaMenu}" var="itemC">
-                            <c:if test="${itemC.parentId == itemP.menuId}">
-                                <li>
-                                    <div class="">
-                                        <a target="mainFrame" href="${itemC.menuPath}">
-                                            <span class="defined-icon icon-chart-organisation">&nbsp;</span>
-                                            <span class="nav">${itemC.menuName}</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </c:if>
-                        </c:forEach>
-                    </ul>
+                <div title="${itemP.menuName}" iconcls="iconfont ${itemP.menuIcon}" style="overflow: auto; padding: 0px;">
+                    <c:forEach varStatus="status" items="${oaMenu}" var="itemC">
+                        <c:if test="${itemC.parentId == itemP.menuId}">
+                            <li class="sys-menu-li">
+                                <div class="menuDiv" target="mainFrame" href="${itemC.menuPath}">
+                                    <span class="nav">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#${itemC.menuIcon}"></use>
+                                        </svg>
+                                        ${itemC.menuName}
+                                    </span>
+                                </div>
+                            </li>
+                        </c:if>
+                    </c:forEach>
                 </div>
             </c:if>
         </c:forEach>
@@ -82,16 +90,17 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.easyui-accordion li a').click(function () {
+        $('.easyui-accordion li div').click(function () {
             var tabTitle = $(this).text();//tab标题
             var url = $(this).attr("href");//tab连接
             addTab(tabTitle, url);
-            $('.easyui-accordion li div').removeClass("selected");
-            $(this).parent().addClass("selected");
+            $('.easyui-accordion li div').removeClass("menu-selected");
+            $(this).removeClass("menu-hover");
+            $(this).addClass("menu-selected");
         }).hover(function () {
-            $(this).parent().addClass("hover");
+            $(this).addClass("menu-hover");
         }, function () {
-            $(this).parent().removeClass("hover");
+            $(this).removeClass("menu-hover");
         });
 
         function addTab(subtitle, url) {

@@ -22,6 +22,7 @@
     <mvc:resources location="/layui/" mapping="/layui/**"/>
     <mvc:resources location="/img/" mapping="/img/**"/>
     <mvc:resources location="/easyui/" mapping="/easyui/**"/>
+    <mvc:resources location="/font/" mapping="/font/**"/>
 
     <!-- 第一种方式：加载一个properties文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

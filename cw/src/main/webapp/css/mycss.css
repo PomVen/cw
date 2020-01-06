@@ -1,0 +1,32 @@
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+sys-menu{
+}
+
+.menuDiv{
+    cursor:pointer;
+    height: 30px;
+    text-align: center;
+    padding-top: 4px;
+    /*background-image: linear-gradient(180deg, #FFFFBA, yellow, #FFFFBA);*/
+}
+.menu-hover{
+    font-size: larger;
+    background-color: #9F9F9F;
+}
+
+.sys-menu-li{
+    list-style-type:none;
+}
+
+.menu-selected{
+    font-weight: bold;
+    color: #FFB800;
+    background-color: #227FEE;
+}
+

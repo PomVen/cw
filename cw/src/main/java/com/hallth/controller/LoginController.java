@@ -61,6 +61,7 @@ public class LoginController {
                     model.addAttribute("oaMenu",oaMenuList);
                 }
                 model.addAttribute("loginUser",loginUser);
+                request.getSession().setAttribute("loginUser", loginUser);
                 return "oa/home";
             } else {
                 logger.info("用户【" + userName + "】状态为" + Constants.USERSTATUS.values()[loginUser.getUserStatus()].getValue());

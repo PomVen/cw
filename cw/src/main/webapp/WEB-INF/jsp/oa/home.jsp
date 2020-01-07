@@ -57,7 +57,7 @@
     <div id="tabs" class="easyui-tabs" fit="true" border="false">
     </div>
     <div id="mm" class="easyui-menu" style="width: 150px;">
-        <div id="mm-refresh">刷新</div>
+        <div id="mm-refresh" icon="#icon-shuaxin2">刷新</div>
         <div class="menu-sep"></div>
         <div id="mm-tabclose">关闭</div>
         <div id="mm-tabcloseall">全部关闭</div>

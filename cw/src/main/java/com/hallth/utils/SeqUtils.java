@@ -11,7 +11,7 @@ public class SeqUtils {
     @Resource
     private OaSeqMapper seqMapper;
 
-    public int getNextLeaveId(String seqType){
+    public int getNextId(String seqType){
         int nextId = seqMapper.getNextId(seqType);
         OaSeq record = new OaSeq(nextId+1, seqType);
         seqMapper.updateSeq(record);

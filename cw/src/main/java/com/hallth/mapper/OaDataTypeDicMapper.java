@@ -23,4 +23,5 @@ public interface OaDataTypeDicMapper {
 
     List<OaDataTypeDic> getOaLeaveTypeList();
 
+    List<OaDataTypeDic> getSchoolTypeList();
 }

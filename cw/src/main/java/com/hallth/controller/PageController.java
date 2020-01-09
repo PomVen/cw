@@ -21,13 +21,15 @@ public class PageController {
     private SeqUtils seqUtils;
 
     @RequestMapping(value="/toBaseInfo", method = {RequestMethod.GET, RequestMethod.POST})
-    public String toBaseInfo(HttpServletRequest request){
+    public String toBaseInfo(HttpServletRequest request, Model model){
+        CwUser loginUser = (CwUser)request.getSession().getAttribute("loginUser");
+        model.addAttribute("loginUser", loginUser);
         return "oa/personInfo/baseInfo";
     }
 
     @RequestMapping(value="/toLeave", method = {RequestMethod.GET, RequestMethod.POST})
     public String toLeave(HttpServletRequest request, Model model){
-        model.addAttribute("leaveId", "L_" + seqUtils.getNextLeaveId("leave"));
+        model.addAttribute("leaveId", "L_" + seqUtils.getNextId("leave"));
         CwUser loginUser = (CwUser)request.getSession().getAttribute("loginUser");
         model.addAttribute("loginUser", loginUser);
         return "oa/baseFunction/leave";

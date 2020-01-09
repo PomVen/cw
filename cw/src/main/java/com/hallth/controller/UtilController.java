@@ -35,4 +35,12 @@ public class UtilController {
         return jsonUtils.oaDicToJson(list);
     }
 
+    @RequestMapping(value="/getSchoolTypeList", method = {RequestMethod.GET, RequestMethod.POST})
+    public List<JSONBean> getSchoolTypeList(HttpServletRequest request){
+        Map map = new HashMap();
+        List<OaDataTypeDic> list = oaDataTypeDicService.getSchoolTypeList();
+        logger.info("学校类型：" + JSONObject.toJSONString(list));
+        return jsonUtils.oaDicToJson(list);
+    }
+
 }

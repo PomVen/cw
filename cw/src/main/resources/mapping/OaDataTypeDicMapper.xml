@@ -76,4 +76,8 @@
     <select id="getOaLeaveTypeList" resultMap="BaseResultMap">
         select * from oa_data_type_dic where type_id='oa_leave_type'
     </select>
+
+    <select id="getSchoolTypeList" resultMap="BaseResultMap">
+        select * from oa_data_type_dic where type_id='school_type'
+    </select>
 </mapper>

@@ -12,4 +12,6 @@ public class RespMap {
     private boolean result;
     private String msg;
     private Map dataMap;
+    private List row;
+    private int total;
 }

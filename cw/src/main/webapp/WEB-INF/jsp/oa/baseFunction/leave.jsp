@@ -69,10 +69,8 @@
 
     function submitForm(flag){
         $('#addLeave').form('submit', {
-            url: '',
             onSubmit: function(param){
                 var isValid = $(this).form('validate');
-                console.log(isValid)
                 if (!isValid){
                     $.messager.progress('close');	// hide progress bar while the form is invalid
                 }

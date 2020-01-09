@@ -15,4 +15,8 @@ public class OaDataTypeDicService {
     public List<OaDataTypeDic> getOaLeaveTypeList(){
         return dataTypeDicMapper.getOaLeaveTypeList();
     }
+
+    public List<OaDataTypeDic> getSchoolTypeList() {
+        return dataTypeDicMapper.getSchoolTypeList();
+    }
 }

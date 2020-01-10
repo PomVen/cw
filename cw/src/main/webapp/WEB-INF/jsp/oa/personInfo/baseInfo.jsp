@@ -115,22 +115,22 @@
         pagination: true,
         pageList: [2, 5, 10, 20, 50, 100],
         // frozenColumns: [[
-        //     {field: 'userName', title: '姓名', width: 150, editor: 'text'}
+        //     {field: 'userName', title: '姓名', width: 150}
         // ]],
         columns: [[
             {field: 'id', title: '序号', align: 'center', hidden: true}
-            , {field: 'userId', title: '工号', editor: 'text', hidden: true}
+            , {field: 'userId', title: '工号', hidden: true}
             , {field: 'schoolName', title: '学校名称', editor: 'text', width: setWidth(24)}
-            , {field: 'typeValue', title: '学校类型', editor: 'text', width: setWidth(12)}
+            , {field: 'typeValue', title: '学校类型', width: setWidth(12)}
             , {
-                field: 'startTime', width: setWidth(12), title: '入学时间', editor: 'text', sortable: true,
+                field: 'startTime', width: setWidth(12), title: '入学时间', sortable: true,
                 formatter: function (value) {
                     var d = new Date(value);
                     return d.getFullYear() + "-" + ((d.getMonth() + 1) < 10 ? "0" + (d.getMonth() + 1) : (d.getMonth() + 1)) + "-" + (d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate());
                 }
             }
             , {
-                field: 'endTime', width: setWidth(12), title: '毕业时间', editor: 'text', sortable: true,
+                field: 'endTime', width: setWidth(12), title: '毕业时间', sortable: true,
                 formatter: function (value) {
                     var d = new Date(value);
                     return d.getFullYear() + "-" + ((d.getMonth() + 1) < 10 ? "0" + (d.getMonth() + 1) : (d.getMonth() + 1)) + "-" + (d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate());
